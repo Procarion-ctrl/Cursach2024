@@ -22,7 +22,6 @@ from autentication.views import RegistrationApiView, LoginApiView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/regist/', RegistrationApiView.as_view(), name='reqistration'),
-    path('api/login/', LoginApiView.as_view(), name='login'),
-    path('api/', include('investments.urls')),
+    path('api/auth/', include('autentication.urls')),
+    path('api/investments/', include('investments.urls')),
 ]
